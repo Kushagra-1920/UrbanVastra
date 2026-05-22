@@ -1,35 +1,41 @@
-import React, { useRef, useState } from 'react';
-import ItemCaraouselCard from './ItemCaraouselCard1';
-
-
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-cards';
+import React from "react";
+import ItemCaraouselCard from "./ItemCaraouselCard1";
+import "././css/ItemCaraousel1.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 
 // import required modules
-import { EffectCards } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 export default function App() {
+  const items = [1, 1, 1, 1, 1, 1, 1];
 
-     const items =[1,1,1,1,1,1,1].map((item, index)=><ItemCaraouselCard key={index} />)
   return (
-    <>
+    <div className="w-full py-10">
       <Swiper
-        effect={'cards'}
-        grabCursor={true}
-        modules={[EffectCards]}
-        className="mySwiper"
+        loop={true}
+        slidesPerView={5}
+        spaceBetween={10}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination, Autoplay]}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        className="mensKurtaSwiper w-full px-5"
       >
-         {items.map((item, index) => (
-          <div key={index} className="flex justify-center items-center">
-            {item}
-          </div>
+        {items.map((item, index) => (
+          <SwiperSlide
+            key={index}
+            className="!h-auto flex justify-center"
+          >
+            <ItemCaraouselCard />
+          </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 }
