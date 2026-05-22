@@ -1,16 +1,80 @@
-.swiper {
-  width: 100%;
-  padding: 10px 0;
+.mensKurtaSwiper {
+  position: relative;
 }
 
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  background: transparent;
-  height: auto !important;
+/* Navigation */
+
+.mensKurtaSwiper .swiper-button-next,
+.mensKurtaSwiper .swiper-button-prev {
+
+  opacity:0.4;
+  width: 34px;
+  height: 34px;
+
+  background: white;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+  color: #0a0a0a !important;
+
+  top: 42%;
+
+  transition: all 0.2s ease;
 }
 
-.mensKurtaSwiper .swiper-pagination-bullet {
-  opacity: 0;
+/* Arrow icon */
+
+.mensKurtaSwiper .swiper-button-next::after,
+.mensKurtaSwiper .swiper-button-prev::after {
+
+  font-size: 12px !important;
+  font-weight: 800;
 }
 
+/* Proper spacing from cards */
+
+.mensKurtaSwiper .swiper-button-prev {
+  left: -8px;
+}
+
+.mensKurtaSwiper .swiper-button-next {
+  right: -8px;
+}
+
+/* Hover */
+
+.mensKurtaSwiper .swiper-button-next:hover,
+.mensKurtaSwiper .swiper-button-prev:hover {
+
+  background: black;
+  color: white !important;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .mensKurtaSwiper .swiper-button-next,
+  .mensKurtaSwiper .swiper-button-prev {
+
+    width: 28px;
+    height: 28px;
+  }
+
+  .mensKurtaSwiper .swiper-button-next::after,
+  .mensKurtaSwiper .swiper-button-prev::after {
+
+    font-size: 10px !important;
+  }
+
+  .mensKurtaSwiper .swiper-button-prev {
+    left: -2px;
+  }
+
+  .mensKurtaSwiper .swiper-button-next {
+    right: -2px;
+  }
+}

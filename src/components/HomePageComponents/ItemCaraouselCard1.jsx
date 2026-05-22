@@ -1,31 +1,31 @@
 import React from 'react'
-import img1 from "../../assets/men-kurta1.jpg"
 
-const HomeSectionCard = () => {
+
+const HomeSectionCard = ({ item }) => {
   return (
+
     <div className='cursor-pointer flex flex-col bg-white rounded-lg shadow-lg overflow-hidden w-[15rem] mx-3'>
       
-      <div className='h-[13rem] w-full overflow-hidden'>
+      <div className='h-[15rem] w-full overflow-hidden'>
         <img
-          className='w-full h-full object-cover object-top'
-          src={img1}
+          className='w-full h-full object-contain transition-transform duration-300 ease-in-out transform hover:scale-105'
+          src={item.imageUrl}
           alt=""
         />
       </div>
 
-      <div className='p-4'>
+      <div className='p-2'>
         <h3 className='text-lg font-bold text-black'>
-          NoFilter
-          
+          {item.title} 
         </h3>
 
         <p className='mt-2 text-sm text-gray-900'>
-          Men solid Pure cotton straight kurta
+          {item.brand}
         </p>
-          
-        <p className='text-xl font-bold text-black  mt-4'>
           <hr />
-          $99.99
+        <p className='text-xl font-bold text-black  mt-4'>
+          
+          ₹{item.price}  
         </p>
       </div>
 

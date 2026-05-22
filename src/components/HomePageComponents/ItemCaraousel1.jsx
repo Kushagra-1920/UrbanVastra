@@ -1,40 +1,77 @@
 import React from "react";
 import ItemCaraouselCard from "./ItemCaraouselCard1";
-import "././css/ItemCaraousel1.css";
+
+import "./css/ItemCaraousel1.css";
+
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 
-// import required modules
-import { Pagination, Autoplay } from 'swiper/modules';
+export default function App({ data, sectionName }) {
 
-export default function App() {
-  const items = [1, 1, 1, 1, 1, 1, 1];
+  const items = data.slice(0, 10);
 
   return (
-    <div className="w-full py-10">
+    <div className="w-full py-5 bg-mist-50 ">
+
+      <h1 className="text-2xl mx-5 mb-4 font-bold">
+        {sectionName}
+      </h1>
+
       <Swiper
+        className="mensKurtaSwiper w-full px-8 md:px-10"
         loop={true}
-        slidesPerView={5}
-        spaceBetween={10}
-        pagination={{
-          clickable: true,
+        navigation={true}
+        spaceBetween={12}
+
+        slidesOffsetBefore={10}
+        slidesOffsetAfter={10}
+
+        breakpoints={{
+          0: {
+            slidesPerView: 2,
+          },
+
+          640: {
+            slidesPerView: 3,
+          },
+
+          768: {
+            slidesPerView: 4,
+          },
+
+          1024: {
+            slidesPerView: 5,
+          },
+
+          1280: {
+            slidesPerView: 6,
+          },
         }}
-        modules={[Pagination, Autoplay]}
+
+        pagination={false}
+
+        modules={[Pagination, Autoplay, Navigation]}
+
         autoplay={{
-          delay: 2000,
+          delay: 2500,
           disableOnInteraction: false,
         }}
-        className="mensKurtaSwiper w-full px-5"
       >
+
         {items.map((item, index) => (
           <SwiperSlide
             key={index}
             className="!h-auto flex justify-center"
           >
-            <ItemCaraouselCard />
+            <ItemCaraouselCard item={item} />
           </SwiperSlide>
         ))}
+
       </Swiper>
     </div>
   );
