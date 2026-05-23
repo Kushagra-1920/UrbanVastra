@@ -12,6 +12,7 @@ Currently, frontend development is in progress.
 
 ## Customer Features
 - User authentication & authorization
+- Payment gateway integration
 - Product browsing and searching
 - Category-based filtering
 - Shopping cart functionality
@@ -129,61 +130,10 @@ Main entities include:
 
 Database relationships are implemented using JPA/Hibernate.
 
----
-
-# Installation
-
-## Clone Repository
-
-```bash
-git clone https://github.com/your-username/project-name.git
-```
-
----
-
-## Frontend Setup
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
----
-
-## Backend Setup
-
-```bash
-cd backend
-mvn spring-boot:run
-```
-
----
-
-# Environment Variables
-
-Create `.env` files for frontend and backend configurations.
-
-Example:
-
-```env
-DB_URL=
-DB_USERNAME=
-DB_PASSWORD=
-JWT_SECRET=
-```
-
----
-
-# Screenshots
-
-Screenshots will be added as development progresses.
-
----
 
 # Future Improvements
 
-- Payment gateway integration
+
 - Product reviews & ratings
 - Recommendation system
 - Email notifications
