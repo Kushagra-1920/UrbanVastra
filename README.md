@@ -1,4 +1,4 @@
-# ShopSphere - Full Stack E-Commerce Platform
+# UrbanVastra - Full Stack E-Commerce Platform
 
 A modern full-stack e-commerce web application built using React, Spring Boot, and MySQL.
 
