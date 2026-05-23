@@ -1,16 +1,201 @@
-# React + Vite
+# ShopSphere - Full Stack E-Commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern full-stack e-commerce web application built using React, Spring Boot, and MySQL.
 
-Currently, two official plugins are available:
+This project focuses on building a scalable online shopping platform with secure authentication, product management, cart functionality, order processing, payment workflow integration, and a dedicated admin dashboard.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Currently, frontend development is in progress.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Features
 
-## Expanding the ESLint configuration
+## Customer Features
+- User authentication & authorization
+- Product browsing and searching
+- Category-based filtering
+- Shopping cart functionality
+- Wishlist management
+- Secure checkout flow
+- Order placement and tracking
+- Responsive UI for all devices
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Admin Features
+- Admin dashboard
+- Product management
+- Category management
+- Order management
+- User management
+- Inventory control
+- Sales analytics
+
+---
+
+# Tech Stack
+
+## Frontend
+- React.js
+- React Router
+- Material UI
+- Tailwind CSS
+- Axios
+
+## Backend
+- Java
+- Spring Boot
+- Spring Security
+- JWT Authentication
+- REST APIs
+
+## Database
+- MySQL
+
+## Tools & Platforms
+- Git & GitHub
+- Postman
+- Maven
+- VS Code
+- IntelliJ IDEA
+
+---
+
+# Project Architecture
+
+Frontend and backend are separated using REST API architecture.
+
+```text
+Frontend (React)
+       ↓
+REST APIs
+       ↓
+Spring Boot Backend
+       ↓
+MySQL Database
+```
+
+---
+
+# Frontend Features
+
+- Modern responsive UI
+- Reusable React components
+- Dynamic product pages
+- Responsive navigation
+- Product carousel
+- Authentication pages
+- Cart & checkout UI
+- Footer & category sections
+- Mobile-first design approach
+
+---
+
+# Backend Features
+
+- RESTful API design
+- JWT-based authentication
+- Role-based authorization
+- Secure password encryption
+- Exception handling
+- DTO architecture
+- Layered backend structure
+- Database relationship mapping
+
+---
+
+# Admin Dashboard
+
+The admin dashboard allows administrators to:
+
+- Add/Edit/Delete products
+- Manage categories
+- Track orders
+- Manage users
+- Monitor inventory
+- View sales-related data
+
+---
+
+# Database Design
+
+Main entities include:
+
+- Users
+- Products
+- Categories
+- Cart
+- Orders
+- Payments
+- Reviews
+
+Database relationships are implemented using JPA/Hibernate.
+
+---
+
+# Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/your-username/project-name.git
+```
+
+---
+
+## Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+## Backend Setup
+
+```bash
+cd backend
+mvn spring-boot:run
+```
+
+---
+
+# Environment Variables
+
+Create `.env` files for frontend and backend configurations.
+
+Example:
+
+```env
+DB_URL=
+DB_USERNAME=
+DB_PASSWORD=
+JWT_SECRET=
+```
+
+---
+
+# Screenshots
+
+Screenshots will be added as development progresses.
+
+---
+
+# Future Improvements
+
+- Payment gateway integration
+- Product reviews & ratings
+- Recommendation system
+- Email notifications
+- Cloud deployment
+- Docker support
+- Redis caching
+- AI-based product recommendations
+
+---
+
+# Author
+
+Kushagra Goel
+
+Full Stack Java Developer
