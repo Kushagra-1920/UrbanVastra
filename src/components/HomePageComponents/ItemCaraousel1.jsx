@@ -16,7 +16,7 @@ export default function App({ data, sectionName }) {
   const items = data.slice(0, 10);
 
   return (
-    <div className="w-full py-5 bg-mist-50 ">
+    <div className="w-full py-5  bg-mist-50 ">
 
       <h1 className="text-2xl mx-5 mb-4 font-bold">
         {sectionName}
@@ -28,8 +28,7 @@ export default function App({ data, sectionName }) {
         navigation={true}
         spaceBetween={12}
 
-        slidesOffsetBefore={10}
-        slidesOffsetAfter={10}
+        
 
         breakpoints={{
           0: {

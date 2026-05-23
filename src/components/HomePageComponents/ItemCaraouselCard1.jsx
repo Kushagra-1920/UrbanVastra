@@ -22,7 +22,7 @@ const HomeSectionCard = ({ item }) => {
         <p className='mt-2 text-sm text-gray-900'>
           {item.brand}
         </p>
-          <hr />
+          
         <p className='text-xl font-bold text-black  mt-4'>
           
           ₹{item.price}  
