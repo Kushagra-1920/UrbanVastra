@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 
 const MainCarousel = () => {
   return (
-    <div className=" w-full mx-0 ">
+    <div className=" w-full  ">
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
         slidesPerView={1}
@@ -31,7 +31,7 @@ const MainCarousel = () => {
                         h-[30vh]
                         sm:h-[40vh]
                         md:h-[60vh]
-                        lg:h-[80vh]
+                        lg:h-[90vh]
                         object-cover
                         object-[60%_20%]
                     "

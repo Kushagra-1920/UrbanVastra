@@ -11,17 +11,18 @@ const footerData = [
     links: ["Marketing", "Analytics", "Commerce", "Insights", "Support"],
   },
   {
-    title: "Resources",
-    links: ["Docs", "Community", "Guides", "Help", "API"],
+    title: "Documentation",
+    links: [ "Guides", "Help", "API Status"],
   },
   {
     title: "Legal",
-    links: ["Privacy", "Terms", "Security", "Cookies", "License"],
+    links: ["Privacy", "Terms", "CLAIM"],
   },
 ];
 
 const Footer = () => {
   return (
+    <div>
     <Box
       sx={{
         bgcolor: "black",
@@ -71,6 +72,11 @@ const Footer = () => {
         ))}
       </Grid>
     </Box>
+      
+      <div className="footer-bottom" style={{ backgroundColor: "black", color: "white", textAlign: "center", padding: "10px 0" }}>
+        2026 © All rights reserved | This template is made with @kushagra-1920 (github) 
+      </div>
+    </div>
   );
 };
 

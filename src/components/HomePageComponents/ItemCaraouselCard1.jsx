@@ -4,18 +4,18 @@ import React from 'react'
 const HomeSectionCard = ({ item }) => {
   return (
 
-    <div className='cursor-pointer flex flex-col bg-white rounded-lg shadow-lg overflow-hidden w-[15rem] mx-3'>
+    <div className='cursor-pointer flex flex-col bg-white rounded-lg shadow-lg overflow-hidden w-[15rem] h-[20rem] '>
       
-      <div className='h-[15rem] w-full overflow-hidden'>
+      <div className='h-64 w-full overflow-hidden '>
         <img
-          className='w-full h-full object-contain transition-transform duration-300 ease-in-out transform hover:scale-105'
+          className='w-full h-full  overflow-hidden object-contain transition-transform duration-300 ease-in-out transform hover:scale-105'
           src={item.imageUrl}
           alt=""
         />
       </div>
 
       <div className='p-2'>
-        <h3 className='text-lg font-bold text-black'>
+        <h3 className='line-clamp-2 text-lg font-bold text-black'>
           {item.title} 
         </h3>
 

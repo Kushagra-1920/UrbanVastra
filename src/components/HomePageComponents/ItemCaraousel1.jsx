@@ -21,6 +21,7 @@ export default function App({ data, sectionName }) {
       <h1 className="text-2xl mx-5 mb-4 font-bold">
         {sectionName}
       </h1>
+  
 
       <Swiper
         className="mensKurtaSwiper w-full px-8 md:px-10"
