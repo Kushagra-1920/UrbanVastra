@@ -72,37 +72,6 @@ export const filters = [
 
 
 
-  // BRAND FILTER
-  {
-    id: "brand",
-    name: "Brand",
-    type: "checkbox",
-
-    options: [
-      {
-        value: "nike",
-        label: "Nike",
-      },
-
-      {
-        value: "adidas",
-        label: "Adidas",
-      },
-
-      {
-        value: "puma",
-        label: "Puma",
-      },
-
-      {
-        value: "offduty",
-        label: "Offduty",
-      },
-    ],
-  },
-
-
-
   // DISCOUNT FILTER
   {
     id: "discount",
