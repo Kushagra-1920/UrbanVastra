@@ -11,9 +11,8 @@ const HomePage = () => {
       <div>
         <MainCarousel />
       </div>
-       
-       
-        
+
+      {/* item caraousel section  */}
       <div className="space-y-10 py-20  flex flex-col  justify-center px-5 lg:px-10 "> 
         <ItemCaraousel1 data={MenKurta} sectionName={"Men's Kurta"} />
         <ItemCaraousel1 data={mensShoes} sectionName={"Men's Shoes"} />
