@@ -3,20 +3,20 @@ import Navbar from "./components/navbar/Navigation.jsx";
 import HomePage from "./pages/HomePage";
 import Footer from "./components/footer/Footer";
 import ProductPage from "./pages/ProductPage.jsx";
+import ProductDetailsPage from "./pages/ProductDetailsPage.jsx";
 
 const App = () => {
   return (
 
     <>
-  <Navbar />
-      <div>
-        <ProductPage />
-      </div>
-      <div>
-      {/* <HomePage /> */}
-      </div>
-   <Footer/>
-   </>
+      <Navbar />
+
+      {/* <HomePage />
+      <ProductPage /> */}
+      <ProductDetailsPage />
+
+      <Footer />
+    </>
   );
 };
 
