@@ -1,61 +1,71 @@
-import { StarIcon } from '@heroicons/react/20/solid'
+import { StarIcon } from "@heroicons/react/20/solid";
+import { Grid, Avatar, Box, Rating } from "@mui/material";
+import ProductReview from "../components/productPageComponents/ProductReview";
 
 const product = {
-    name: 'Basic Tee 6-Pack',
-    price: '$192',
-    href: '#',
+    name: "Basic Tee 6-Pack",
+    price: "₹399",
+    href: "#",
     breadcrumbs: [
-        { id: 1, name: 'Men', href: '#' },
-        { id: 2, name: 'Clothing', href: '#' },
+        { id: 1, name: "Men", href: "#" },
+        { id: 2, name: "Clothing", href: "#" },
     ],
     images: [
         {
-            src: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
-            alt: 'Two each of gray, white, and black shirts laying flat.',
+            src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-secondary-product-shot.jpg",
+            alt: "Two each of gray, white, and black shirts laying flat.",
         },
         {
-            src: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg',
-            alt: 'Model wearing plain black basic tee.',
+            src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg",
+            alt: "Model wearing plain black basic tee.",
         },
         {
-            src: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
-            alt: 'Model wearing plain gray basic tee.',
+            src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg",
+            alt: "Model wearing plain gray basic tee.",
         },
         {
-            src: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
-            alt: 'Model wearing plain white basic tee.',
+            src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-featured-product-shot.jpg",
+            alt: "Model wearing plain white basic tee.",
         },
     ],
     colors: [
-        { id: 'white', name: 'White', classes: 'bg-white checked:outline-gray-400' },
-        { id: 'gray', name: 'Gray', classes: 'bg-gray-200 checked:outline-gray-400' },
-        { id: 'black', name: 'Black', classes: 'bg-gray-900 checked:outline-gray-900' },
+        {
+            id: "white",
+            name: "White",
+            classes: "bg-white checked:outline-gray-400",
+        },
+        {
+            id: "gray",
+            name: "Gray",
+            classes: "bg-gray-200 checked:outline-gray-400",
+        },
+        {
+            id: "black",
+            name: "Black",
+            classes: "bg-gray-900 checked:outline-gray-900",
+        },
     ],
     sizes: [
-        { name: 'XXS', inStock: false },
-        { name: 'XS', inStock: true },
-        { name: 'S', inStock: true },
-        { name: 'M', inStock: true },
-        { name: 'L', inStock: true },
-        { name: 'XL', inStock: true },
-        { name: '2XL', inStock: true },
-        { name: '3XL', inStock: true },
+        { name: "S", inStock: true },
+        { name: "M", inStock: true },
+        { name: "L", inStock: true },
+        { name: "XL", inStock: false },
     ],
     description:
         'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
     highlights: [
-        'Hand cut and sewn locally',
-        'Dyed with our proprietary colors',
-        'Pre-washed & pre-shrunk',
-        'Ultra-soft 100% cotton',
+        "Hand cut and sewn locally",
+        "Dyed with our proprietary colors",
+        "Pre-washed & pre-shrunk",
+        "Ultra-soft 100% cotton",
     ],
     details:
         'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
-}
-const reviews = { href: '#', average: 4, totalCount: 117 }
+};
+const reviews = { href: "#", average: 4, totalCount: 117 };
 
 function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+    return classes.filter(Boolean).join(" ");
 }
 
 export default function ProductDetailsPage() {
@@ -63,11 +73,17 @@ export default function ProductDetailsPage() {
         <div className="bg-white">
             <div className="pt-6">
                 <nav aria-label="Breadcrumb">
-                    <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+                    <ol
+                        role="list"
+                        className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
+                    >
                         {product.breadcrumbs.map((breadcrumb) => (
                             <li key={breadcrumb.id}>
                                 <div className="flex items-center">
-                                    <a href={breadcrumb.href} className="mr-2 text-sm font-medium text-gray-900">
+                                    <a
+                                        href={breadcrumb.href}
+                                        className="mr-2 text-sm font-medium text-gray-900"
+                                    >
                                         {breadcrumb.name}
                                     </a>
                                     <svg
@@ -84,7 +100,11 @@ export default function ProductDetailsPage() {
                             </li>
                         ))}
                         <li className="text-sm">
-                            <a href={product.href} aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">
+                            <a
+                                href={product.href}
+                                aria-current="page"
+                                className="font-medium text-gray-500 hover:text-gray-600"
+                            >
                                 {product.name}
                             </a>
                         </li>
@@ -92,7 +112,6 @@ export default function ProductDetailsPage() {
                 </nav>
 
                 <section className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-10 px-4 pt-10 ">
-
                     {/* Image gallery */}
                     <div className="flex flex-col items-center">
                         <div className=" overflow-hidden rounded-lg max-w-[30rem] max-h-[35rem]">
@@ -104,16 +123,16 @@ export default function ProductDetailsPage() {
                         </div>
 
                         <div className="flex flex-wrap space-x-5 justify-center">
-                            {product.images.map((item) => <div className="aspect-h-2 aspect-w-3 w-full overflow-hidden rounded-lg max-w-[5rem] max-h-[5rem] mt-4">
-                                <img
-                                    alt={item.alt}
-                                    src={item.src}
-                                    className="h-full w-full object-cover object-center"
-                                />
-                            </div>)}
-
+                            {product.images.map((item) => (
+                                <div className="aspect-h-2 aspect-w-3 w-full overflow-hidden rounded-lg max-w-[5rem] max-h-[5rem] mt-4">
+                                    <img
+                                        alt={item.alt}
+                                        src={item.src}
+                                        className="h-full w-full object-cover object-center"
+                                    />
+                                </div>
+                            ))}
                         </div>
-
                     </div>
 
                     {/* Product info */}
@@ -134,9 +153,7 @@ export default function ProductDetailsPage() {
                             <div className="flex flex-wrap  text-l items-center space-x-2 mt-2 lg:text-xl">
                                 <p className="font-semiboldbold "> ₹1999 </p>
                                 <p className="  line-through opacity-50 "> ₹7996 </p>
-                                <p className="  font-bold opacity-75 text-green-500">
-                                    75% off
-                                </p>
+                                <p className="  font-bold opacity-75 text-green-500">75% off</p>
                             </div>
 
                             {/* Reviews */}
@@ -149,21 +166,26 @@ export default function ProductDetailsPage() {
                                                 key={rating}
                                                 aria-hidden="true"
                                                 className={classNames(
-                                                    reviews.average > rating ? 'text-gray-900' : 'text-gray-200',
-                                                    'size-5 shrink-0',
+                                                    reviews.average > rating
+                                                        ? "text-amber-300"
+                                                        : "text-gray-200",
+                                                    "size-5 shrink-0",
                                                 )}
                                             />
                                         ))}
                                     </div>
                                     <p className="sr-only">{reviews.average} out of 5 stars</p>
-                                    <a href={reviews.href} className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                                    <a
+                                        href={reviews.href}
+                                        className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                                    >
                                         {reviews.totalCount} reviews
                                     </a>
                                 </div>
                             </div>
 
                             <form className="mt-10">
-                                {/* Colors */}
+                                {/* Colors
                                 <div>
                                     <h3 className="text-sm font-medium text-gray-900">Color</h3>
 
@@ -186,15 +208,12 @@ export default function ProductDetailsPage() {
                                             ))}
                                         </div>
                                     </fieldset>
-                                </div>
+                                </div> */}
 
                                 {/* Sizes */}
                                 <div className="mt-10">
                                     <div className="flex items-center justify-between">
                                         <h3 className="text-sm font-medium text-gray-900">Size</h3>
-                                        <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                                            Size guide
-                                        </a>
                                     </div>
 
                                     <fieldset aria-label="Choose a size" className="mt-4">
@@ -224,7 +243,7 @@ export default function ProductDetailsPage() {
 
                                 <button
                                     type="submit"
-                                    className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
+                                    className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
                                 >
                                     Add to bag
                                 </button>
@@ -237,12 +256,16 @@ export default function ProductDetailsPage() {
                                 <h3 className="sr-only">Description</h3>
 
                                 <div className="space-y-6">
-                                    <p className="text-base text-gray-900">{product.description}</p>
+                                    <p className="text-base text-gray-900">
+                                        {product.description}
+                                    </p>
                                 </div>
                             </div>
 
                             <div className="mt-10">
-                                <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
+                                <h3 className="text-sm font-medium text-gray-900">
+                                    Highlights
+                                </h3>
 
                                 <div className="mt-4">
                                     <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
@@ -266,7 +289,37 @@ export default function ProductDetailsPage() {
                     </div>
                 </section>
 
+                {/* Rating and reviews */}
+                <section className="   pt-10 sm:px-6 md:px-10 lg:px-20">
+                    <h1 className="font-semibold text-2xl pb-4 text-center ">
+                        Rating and Reviews
+                    </h1>
+
+                    <div className="  flex flex-col border border-gray-300 px-10 sm:py-6 md:py-10 lg:py-16 ">
+                        <Grid container spacing={4}  sx={{  }} >
+                            <Grid size={{ xs: 4, sm: 6 }}>
+                                <div className="space-y-4">
+                                    {[1, 1, 1].map((_, index) => (
+                                        <ProductReview key={index} />
+                                    ))}
+                                </div>
+                            </Grid>
+                            
+
+                            <Grid size={{ xs: 4, sm: 6 }} sx={{  }}>
+                                <div className="sticky top-10">
+                                    <h1 className="font-semibold text-xl">Product Rating</h1>
+
+                                    <div className="flex items-center gap-2">
+                                        <Rating value={4.5} precision={0.5} readOnly />
+                                        <p>578 reviews</p>
+                                    </div>
+                                </div>
+                            </Grid>
+                        </Grid>
+                    </div>
+                </section>
             </div>
         </div>
-    )
+    );
 }
