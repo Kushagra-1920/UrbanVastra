@@ -1,6 +1,9 @@
 import { StarIcon } from "@heroicons/react/20/solid";
-import { Grid, Avatar, Box, Rating } from "@mui/material";
+import { Grid, Box, Rating, Typography } from "@mui/material";
 import ProductReview from "../components/productPageComponents/ProductReview";
+import LinearProgress from '@mui/material/LinearProgress';
+import { kurta } from "../assets/Kurta/kurta"
+import ProductCard from "../components/productPageComponents/ProductCard";
 
 const product = {
     name: "Basic Tee 6-Pack",
@@ -68,10 +71,27 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 
+const RatingBar = ({ value, color }) => (
+    <LinearProgress
+        variant="determinate"
+        value={value}
+        sx={{
+            height: 8,
+            borderRadius: 5,
+            bgcolor: "#9e9e9e",
+
+            "& .MuiLinearProgress-bar": {
+                backgroundColor: color,
+                borderRadius: 5,
+            },
+        }}
+    />
+);
+
 export default function ProductDetailsPage() {
     return (
-        <div className="bg-white">
-            <div className="pt-6">
+        <div className="bg-white ">
+            <div className=" container pt-6 mx-auto  px-4 sm:px-6 lg:px-4">
                 <nav aria-label="Breadcrumb">
                     <ol
                         role="list"
@@ -296,7 +316,7 @@ export default function ProductDetailsPage() {
                     </h1>
 
                     <div className="  flex flex-col border border-gray-300 px-10 sm:py-6 md:py-10 lg:py-16 ">
-                        <Grid container spacing={4}  sx={{  }} >
+                        <Grid container spacing={4} sx={{}} >
                             <Grid size={{ xs: 4, sm: 6 }}>
                                 <div className="space-y-4">
                                     {[1, 1, 1].map((_, index) => (
@@ -304,9 +324,9 @@ export default function ProductDetailsPage() {
                                     ))}
                                 </div>
                             </Grid>
-                            
 
-                            <Grid size={{ xs: 4, sm: 6 }} sx={{  }}>
+
+                            <Grid size={{ xs: 4, sm: 6 }} sx={{}}>
                                 <div className="sticky top-10">
                                     <h1 className="font-semibold text-xl">Product Rating</h1>
 
@@ -315,8 +335,84 @@ export default function ProductDetailsPage() {
                                         <p>578 reviews</p>
                                     </div>
                                 </div>
+
+                                <Box className="mt-5 container space-y-3 " sx={{ width: "100%", alignItems: "center", justifyContent: "center" }}>
+
+                                    <Grid container spacing={2} >
+                                        <Grid size={2}>
+                                            <Typography variant="button" color="inital">Excellent</Typography>
+                                        </Grid>
+
+                                        <Grid size={6} >
+                                            <RatingBar value={80} color="#2E7D32" />
+                                        </Grid>
+                                    </Grid>
+
+
+
+
+                                    <Grid container spacing={2} >
+                                        <Grid size={2}>
+                                            <Typography variant="button" color="inital">Very Good</Typography>
+                                        </Grid>
+
+                                        <Grid size={6} >
+                                            <RatingBar value={65} color="#43A047" />
+                                        </Grid>
+                                    </Grid>
+
+
+                                    <Grid container spacing={2} >
+                                        <Grid size={2}>
+                                            <Typography variant="button" color="inital">Good</Typography>
+                                        </Grid>
+
+                                        <Grid size={6} >
+                                            <RatingBar value={55} color=" #FACC15" />
+                                        </Grid>
+                                    </Grid>
+
+
+
+                                    <Grid container spacing={2} >
+                                        <Grid size={2}>
+                                            <Typography variant="button" color="inital">Average</Typography>
+                                        </Grid>
+
+                                        <Grid size={6} >
+                                            <RatingBar value={35} color="#F97316" />
+                                        </Grid>
+                                    </Grid>
+
+
+
+                                    <Grid container spacing={2} >
+                                        <Grid size={2}>
+                                            <Typography variant="button" color="inital">Poor</Typography>
+                                        </Grid>
+
+                                        <Grid size={6} >
+                                            <RatingBar value={5} color="#EF4444" />
+                                        </Grid>
+                                    </Grid>
+                                </Box>
                             </Grid>
                         </Grid>
+                    </div>
+
+                </section>
+
+
+                {/* Similar Products */}
+                <section className="pt-8">
+                    <h1 className="py-5 font-semibold text-2xl">
+                        Similar Products
+                    </h1>
+
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
+                        {kurta.map((item) => (
+                            <ProductCard key={item.id} product={item} />
+                        ))}
                     </div>
                 </section>
             </div>
