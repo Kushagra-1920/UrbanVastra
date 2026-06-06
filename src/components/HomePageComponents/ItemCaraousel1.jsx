@@ -24,7 +24,7 @@ export default function App({ data, sectionName }) {
   
 
       <Swiper
-        className="mensKurtaSwiper w-full px-8 md:px-10"
+        className="mensKurtaSwiper w-full px-8 "
         loop={true}
         navigation={true}
         spaceBetween={12}
@@ -48,9 +48,7 @@ export default function App({ data, sectionName }) {
             slidesPerView: 5,
           },
 
-          1280: {
-            slidesPerView: 6,
-          },
+        
         }}
 
         pagination={false}

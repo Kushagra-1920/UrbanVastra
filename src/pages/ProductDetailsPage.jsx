@@ -71,22 +71,38 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 
-const RatingBar = ({ value, color }) => (
-    <LinearProgress
-        variant="determinate"
-        value={value}
-        sx={{
-            height: 8,
-            borderRadius: 5,
-            bgcolor: "#9e9e9e",
+const RatingRow = ({ label, value, color }) => {
+    return (
+        <div className="flex items-center gap-4 ">
 
-            "& .MuiLinearProgress-bar": {
-                backgroundColor: color,
-                borderRadius: 5,
-            },
-        }}
-    />
-);
+            <div className="w-24 shrink-0">
+                <span className="text-sm text-gray-700 whitespace-nowrap">
+                    {label}
+                </span>
+            </div>
+
+            <div className="flex-1">
+                <LinearProgress
+                    variant="determinate"
+                    value={value}
+                    sx={{
+                        height: 8,
+                        borderRadius: 5,
+                        backgroundColor: "#E5E7EB",
+                        "& .MuiLinearProgress-bar": {
+                            backgroundColor: color,
+                            borderRadius: 5,
+                        },
+                    }}
+                />
+            </div>
+
+            <div className="w-10 text-xs text-gray-500 text-right">
+                {value}%
+            </div>
+        </div>
+    );
+};
 
 export default function ProductDetailsPage() {
     return (
@@ -310,111 +326,74 @@ export default function ProductDetailsPage() {
                 </section>
 
                 {/* Rating and reviews */}
-                <section className="   pt-10 sm:px-6 md:px-10 lg:px-20">
-                    <h1 className="font-semibold text-2xl pb-4 text-center ">
-                        Rating and Reviews
-                    </h1>
+                
+<section className="pt-10 px-4 sm:px-6 md:px-10 lg:px-20">
+    <h1 className="font-semibold text-2xl pb-6 text-center">
+        Rating and Reviews
+    </h1>
 
-                    <div className="  flex flex-col border border-gray-300 px-10 sm:py-6 md:py-10 lg:py-16 ">
-                        <Grid container spacing={4} sx={{}} >
-                            <Grid size={{ xs: 4, sm: 6 }}>
-                                <div className="space-y-4">
-                                    {[1, 1, 1].map((_, index) => (
-                                        <ProductReview key={index} />
-                                    ))}
-                                </div>
-                            </Grid>
+    <div className="border border-gray-200 rounded-xl  bg-gray-100 p-16 m-3">
+        
+        {/* MAIN 2 COLUMN WRAPPER */}
+        <Grid container spacing={50} >
 
+            {/* LEFT SIDE - REVIEWS */}
+            <Grid item xs={12} md={9}>
+                <div className="space-y-4 mt-3">
+                    {[1, 2, 3].map((_, index) => (
+                        <ProductReview key={index} />
+                    ))}
+                </div>
+            </Grid>
 
-                            <Grid size={{ xs: 4, sm: 6 }} sx={{}}>
-                                <div className="sticky top-10">
-                                    <h1 className="font-semibold text-xl">Product Rating</h1>
+            {/* RIGHT SIDE - RATING */}
+            <Grid item xs={12} md={3} >
+                
+                {/* HEADER */}
+                <div className="mb-6">
+                    <h2 className="text-xl font-semibold">
+                        Product Rating
+                    </h2>
 
-                                    <div className="flex items-center gap-2">
-                                        <Rating value={4.5} precision={0.5} readOnly />
-                                        <p>578 reviews</p>
-                                    </div>
-                                </div>
-
-                                <Box className="mt-5 container space-y-3 " sx={{ width: "100%", alignItems: "center", justifyContent: "center" }}>
-
-                                    <Grid container spacing={2} >
-                                        <Grid size={2}>
-                                            <Typography variant="button" color="inital">Excellent</Typography>
-                                        </Grid>
-
-                                        <Grid size={6} >
-                                            <RatingBar value={80} color="#2E7D32" />
-                                        </Grid>
-                                    </Grid>
-
-
-
-
-                                    <Grid container spacing={2} >
-                                        <Grid size={2}>
-                                            <Typography variant="button" color="inital">Very Good</Typography>
-                                        </Grid>
-
-                                        <Grid size={6} >
-                                            <RatingBar value={65} color="#43A047" />
-                                        </Grid>
-                                    </Grid>
-
-
-                                    <Grid container spacing={2} >
-                                        <Grid size={2}>
-                                            <Typography variant="button" color="inital">Good</Typography>
-                                        </Grid>
-
-                                        <Grid size={6} >
-                                            <RatingBar value={55} color=" #FACC15" />
-                                        </Grid>
-                                    </Grid>
-
-
-
-                                    <Grid container spacing={2} >
-                                        <Grid size={2}>
-                                            <Typography variant="button" color="inital">Average</Typography>
-                                        </Grid>
-
-                                        <Grid size={6} >
-                                            <RatingBar value={35} color="#F97316" />
-                                        </Grid>
-                                    </Grid>
-
-
-
-                                    <Grid container spacing={2} >
-                                        <Grid size={2}>
-                                            <Typography variant="button" color="inital">Poor</Typography>
-                                        </Grid>
-
-                                        <Grid size={6} >
-                                            <RatingBar value={5} color="#EF4444" />
-                                        </Grid>
-                                    </Grid>
-                                </Box>
-                            </Grid>
-                        </Grid>
+                    <div className="flex items-center gap-2 mt-2">
+                        <Rating value={4.5} precision={0.5} readOnly />
+                        <span className="text-sm text-gray-600">
+                            578 reviews
+                        </span>
                     </div>
+                </div>
 
-                </section>
+                {/* BREAKDOWN */}
+                <div className="space-y-4">
+
+                    <RatingRow label="Excellent" value={80} color="#2E7D32" />
+                    <RatingRow label="Very Good" value={65} color="#43A047" />
+                    <RatingRow label="Good" value={55} color="#FACC15" />
+                    <RatingRow label="Average" value={35} color="#F97316" />
+                    <RatingRow label="Poor" value={5} color="#EF4444" />
+
+                </div>
+
+            </Grid>
+
+        </Grid>
+    </div>
+</section>
 
 
                 {/* Similar Products */}
-                <section className="pt-8">
-                    <h1 className="py-5 font-semibold text-2xl">
+                <div className="pt-8 m-5 w-[100]">
+                    <h1 className=" font-semibold text-2xl text-center">
                         Similar Products
                     </h1>
+                        <br />
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 m-auto">
                         {kurta.map((item) => (
                             <ProductCard key={item.id} product={item} />
                         ))}
                     </div>
-                </section>
+                </div>
             </div>
         </div>
     );

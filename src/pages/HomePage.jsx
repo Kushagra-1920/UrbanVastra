@@ -7,7 +7,7 @@ import {mensShoes} from "../assets/shoes"
 
 const HomePage = () => {
   return (
-    <>
+   <>
       <div>
         <MainCarousel />
       </div>
@@ -20,7 +20,7 @@ const HomePage = () => {
         <ItemCaraousel1 data={MenKurta} sectionName={"Men's Kurta"} />
 
       </div>
-    </>
+  </>
   );
 };
 
