@@ -9,13 +9,19 @@ import CartPage from "./pages/CartPage.jsx";
 const App = () => {
   return (
 
-    <>
+    < >
+      
+        {/* <main className="max-w-7xl mx-auto px-4 lg:px-8">
+        <Routes />
+        once done with router then add this css to the main div 
+      </main> */}
+
       <Navbar />
 
       {/* <HomePage />
       <ProductPage />
       <ProductDetailsPage /> */}
-      <CartPage/>
+      <CartPage />
 
       <Footer />
     </>
