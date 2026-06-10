@@ -3,7 +3,7 @@ import Button from '@mui/material/Button'
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="productCard w-60 m-3 transition-all cursor-pointer  ">
+    <div className="productCard w-full m-3 transition-all cursor-pointer  ">
       <div className="h-60 ">
         <img
           className="w-full h-full object-contain"

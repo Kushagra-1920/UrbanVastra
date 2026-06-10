@@ -396,8 +396,8 @@ export default function ProductPage() {
               </form>
 
               {/* Product grid */}
-              <div className="lg:col-span-4 w-full">
-                <div className="flex flex-wrap justify-center bg-white py-5">
+              <div className="lg:col-span-4  w-full">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5   py-5">
                   {kurta.map((item) => (
                     <ProductCard product={item} />
                   ))}
