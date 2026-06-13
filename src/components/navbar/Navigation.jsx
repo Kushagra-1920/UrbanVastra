@@ -12,6 +12,7 @@ import { Avatar, Button, Menu, MenuItem } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 
 import TextField from "@mui/material/TextField";
+import { useNavigate } from "react-router-dom";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -19,6 +20,7 @@ function classNames(...classes) {
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+
 
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -31,9 +33,7 @@ export default function Navigation() {
     },
   };
 
-  const navigate = (path) => {
-    window.location.href = path;
-  };
+ const navigate = useNavigate();
 
   const handleUserClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -227,7 +227,8 @@ export default function Navigation() {
               <div className="ml-4 flex lg:ml-0">
                 <span className="sr-only">Your Company</span>
 
-                <img
+                <img 
+                  onClick={()=> navigate("/")}
                   src="https://res.cloudinary.com/ddkso1wxi/image/upload/v1675919455/Logo/Copy_of_Zosh_Academy_nblljp.png"
                   alt="Shopwithzosh"
                   className="h-8 w-8 mr-2"
@@ -389,10 +390,9 @@ export default function Navigation() {
                       open={openUserMenu}
                       onClose={handleCloseUserMenu}
                     >
-                      <MenuItem>
-                        {auth.user?.role === "ROLE_ADMIN"
-                          ? "Admin Dashboard"
-                          : "My Orders"}
+                      <MenuItem onClick={()=>navigate("/account/orders")}>
+                      
+                        My Orders
                       </MenuItem>
 
                       <MenuItem>Logout</MenuItem>
@@ -417,8 +417,11 @@ export default function Navigation() {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                  <Button className="group -m-2 flex items-center p-2">
+                  <Button
+                  onClick={()=>navigate("/cart")} 
+                  className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
+
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
                     />

@@ -2,7 +2,13 @@ import React from 'react'
 import CartItem from '../components/Cart/CartItem'
 import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button'
+import { useNavigate } from 'react-router-dom';
 const CartPage = () => {
+  const navigate= useNavigate();
+
+  const handleCheckout=()=>{
+    navigate("/checkout?step=2")
+  }
 
   return (
 
@@ -46,7 +52,9 @@ const CartPage = () => {
               
 
            <div className=' items-center'>
-            <Button variant="contained" color="secondary" className='w-full'>
+            <Button 
+            onClick={handleCheckout}
+            variant="contained" color="secondary" className='w-full'>
               Checkout
             </Button> 
            </div> 

@@ -4,6 +4,7 @@ import ProductReview from "../components/productPageComponents/ProductReview";
 import LinearProgress from '@mui/material/LinearProgress';
 import { kurta } from "../assets/Kurta/kurta"
 import ProductCard from "../components/productPageComponents/ProductCard";
+import { useNavigate } from "react-router-dom";
 
 const product = {
     name: "Basic Tee 6-Pack",
@@ -72,6 +73,7 @@ function classNames(...classes) {
 }
 
 const RatingRow = ({ label, value, color }) => {
+  
     return (
         <div className="flex items-center gap-4 ">
 
@@ -105,6 +107,11 @@ const RatingRow = ({ label, value, color }) => {
 };
 
 export default function ProductDetailsPage() {
+      const navigate = useNavigate();
+
+    const handleAddToCart=()=>{
+        navigate("/cart");
+    };
     return (
         <div className="bg-white ">
             <div className=" container pt-6 mx-auto  px-4 sm:px-6 lg:px-4">
@@ -278,10 +285,11 @@ export default function ProductDetailsPage() {
                                 </div>
 
                                 <button
+                                    onClick={handleAddToCart}
                                     type="submit"
                                     className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
                                 >
-                                    Add to bag
+                                    Add to cart
                                 </button>
                             </form>
                         </div>
