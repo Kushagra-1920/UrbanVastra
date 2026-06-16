@@ -30,18 +30,21 @@
 .mensKurtaSwiper .swiper-button-next::after,
 .mensKurtaSwiper .swiper-button-prev::after {
 
-  font-size: 12px !important;
+  font-size: 10px !important;
   font-weight: 800;
+
 }
 
 /* Proper spacing from cards */
 
 .mensKurtaSwiper .swiper-button-prev {
   left: -8px;
+  margin: auto;
 }
 
 .mensKurtaSwiper .swiper-button-next {
   right: -8px;
+  margin: auto;
 }
 
 /* Hover */

@@ -1,10 +1,7 @@
 import React from "react";
 import ItemCaraouselCard from "./ItemCaraouselCard1";
-
 import "./css/ItemCaraousel1.css";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -22,15 +19,13 @@ export default function App({ data, sectionName }) {
         {sectionName}
       </h1>
   
-
+    <div className="">
       <Swiper
-        className="mensKurtaSwiper w-full px-8 "
+        className="mensKurtaSwiper w-full  "
         loop={true}
         navigation={true}
-        spaceBetween={12}
-
         
-
+        
         breakpoints={{
           0: {
             slidesPerView: 2,
@@ -47,6 +42,9 @@ export default function App({ data, sectionName }) {
           1024: {
             slidesPerView: 5,
           },
+          1920:{
+             slidesPerView: 6,
+          }
 
         
         }}
@@ -64,13 +62,14 @@ export default function App({ data, sectionName }) {
         {items.map((item, index) => (
           <SwiperSlide
             key={index}
-            className="!h-auto flex justify-center"
+            className="!h-auto flex justify-center ml-1"
           >
             <ItemCaraouselCard item={item} />
           </SwiperSlide>
         ))}
 
       </Swiper>
+      </div>  
     </div>
   );
 }
