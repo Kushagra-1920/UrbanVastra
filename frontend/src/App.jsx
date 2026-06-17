@@ -1,6 +1,5 @@
 import React from "react";
 import { Route,Routes } from 'react-router-dom'
-import HomePage from './pages/HomePage.jsx'
 
 
 import CustomRoutes from "./Routers/CustomRoutes.jsx";
@@ -10,10 +9,10 @@ const App = () => {
 
     < >
 
-      {/* <Routes>
+       <Routes>
           <Route path="/*" element={<CustomRoutes/>} /> 
-      </Routes> */}
-      <HomePage/>
+      </Routes> 
+     
 
     
     </>
